@@ -6,5 +6,4 @@ class User < ApplicationRecord
   end
   before_validation { email.downcase! }
   has_secure_password
-
 end
