@@ -1,9 +1,14 @@
 <h1>Sign up</h1>
 <%= form_with(model: @user, local: true) do |f| %>
   <% if @user.errors.any? %>
-    <%= @user.errors.full_messages.each do |msg| %>
-      <%= msg %>
-    <% end %>
+    <div  id="error_explanation">
+      <h2>The form contains<%= pluralize(@user.errors.count, "error") %>. </h2>
+      <ul>
+        <%= @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li><br>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
   <%= f.label :name %>
   <%= f.text_field :name %>
