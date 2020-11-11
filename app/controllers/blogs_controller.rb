@@ -13,7 +13,6 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-
     @blog = Blog.new
   end
 
@@ -57,10 +56,7 @@ class BlogsController < ApplicationController
   end
   def confirm
     @blog = Blog.new(blog_params)
-<<<<<<< HEAD
     @blog.user_id = current_user.id
-=======
->>>>>>> セッション管理、非ログインユーザーの処理
   end
 
   # DELETE /blogs/1
@@ -74,10 +70,6 @@ class BlogsController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-    # Use callbacks to share common setup or constraints between actions.
-=======
->>>>>>> セッション管理、非ログインユーザーの処理
   def set_blog
     @blog = Blog.find(params[:id])
   end
