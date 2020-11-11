@@ -21,11 +21,8 @@ ActiveRecord::Schema.define(version: 2020_11_11_065950) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-<<<<<<< HEAD
     t.bigint "user_id"
     t.index ["user_id"], name: "index_blogs_on_user_id"
-=======
->>>>>>> セッション管理、非ログインユーザーの処理
   end
 
   create_table "users", force: :cascade do |t|

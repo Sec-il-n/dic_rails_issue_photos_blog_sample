@@ -18,13 +18,12 @@ class BlogsController < ApplicationController
     if params[:back]
       render :new
     else
+    if params[:back]
+      render :new
+    else
       if @blog.save
         redirect_to blogs_path, notice: 'ブログを作成しました'
-        # format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        # format.json { render :show, status: :created, location: @blog }
       else
-        # format.html { render :new }
-        # format.json { render json: @blog.errors, status: :unprocessable_entity }
         render :new
       end
     end
@@ -40,6 +39,7 @@ class BlogsController < ApplicationController
   def confirm
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
+  end
   end
   def destroy
     @blog.destroy
