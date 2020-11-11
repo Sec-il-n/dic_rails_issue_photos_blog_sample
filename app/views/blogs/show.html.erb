@@ -10,5 +10,12 @@
   <%= @blog.content %>
 </p>
 
+<p>
+  <strong>Photo:</strong>
+  <%# <%= @blog.image %> %>
+  <%= image_tag @blog.image.url %>
+  <%# <%= image_tag @blog.image_url %> %>
+</p>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>

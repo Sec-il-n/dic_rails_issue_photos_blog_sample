@@ -14,6 +14,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
+
     @blog = Blog.new
   end
 
@@ -25,14 +26,18 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-
-    respond_to do |format|
+    if params[:back]
+      render :new
+    else
+    # respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        redirect_to blogs_path, notice: 'ブログを作成しました'
+        # format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+        # format.json { render :show, status: :created, location: @blog }
       else
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        # format.html { render :new }
+        # format.json { render json: @blog.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
@@ -50,6 +55,9 @@ class BlogsController < ApplicationController
       end
     end
   end
+  def confirm
+    @blog = Blog.new(blog_params)
+  end
 
   # DELETE /blogs/1
   # DELETE /blogs/1.json
@@ -66,9 +74,8 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.find(params[:id])
     end
-
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content, :image, :image_cache)
     end
 end
