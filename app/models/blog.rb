@@ -4,4 +4,5 @@ class Blog < ApplicationRecord
     validates :title
     validates :content, length: { maximum: 255 }
   end
+  belongs_to :user
 end
