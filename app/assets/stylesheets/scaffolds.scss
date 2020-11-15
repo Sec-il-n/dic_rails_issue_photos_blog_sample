@@ -18,13 +18,9 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-
+// ヘッダーの文字も
 a {
   color: #000;
-
-  &:visited {
-    color: #666;
-  }
 
   &:hover {
     color: #fff;
