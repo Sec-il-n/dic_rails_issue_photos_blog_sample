@@ -26,9 +26,9 @@
         </nav>
       </ul>
     </header>
-      <% flash.each do |key,value| %>
-          <%= content_tag(:div, value, class: "#{key}") %><br>
-      <% end %>
+    <% flash.each do |key,value| %>
+        <%= content_tag(:div, value, class: "#{key}") %><br>
+    <% end %>
     <%= yield %>
     <footer>
      <p>© 2015-2016 PhotoBlogsSample Corp.</p>
