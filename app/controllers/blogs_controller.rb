@@ -33,15 +33,12 @@ class BlogsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'ブログを編集しました。' }
-        format.json { render :show, status: :ok, location: @blog }
+      unless @blog.update(blog_params) then
+        redirect_to blogs_path, notice: '編集が失敗しました。'
       else
-        format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        flash.now[:notice] = 'ブログを編集しました。'
+        render :show
       end
-    end
   end
   def confirm
     @blog = Blog.new(blog_params)
