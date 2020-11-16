@@ -14,10 +14,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.11'
 gem 'pry-rails'
-<<<<<<< HEAD
-=======
-# Use ActiveStorage variant
->>>>>>> セッション管理、非ログインユーザーの処理
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
