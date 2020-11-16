@@ -56,11 +56,16 @@ div {
   background-color:rgba(255,255,255,0.5);
   background-blend-mode:lighten;
 }
-// #notice {
-//   color: green;
-//   margin-top: 10px;
-//   margin-bottom: 10px;
-// }
+
+.danger {
+  color: red;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  // margin: auto;
+  font-size: 15px;
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+}
 .field_with_errors {
   padding: 2px;
   margin: 0 auto;
@@ -95,3 +100,10 @@ div {
 label {
   display: block;
 }
+//
+// .field {
+//   color: #fff;
+//   font-size: 1rem;
+//   margin-right: auto;
+//   text-align: center;
+// }

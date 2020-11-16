@@ -27,7 +27,7 @@
       </ul>
     </header>
     <% flash.each do |key,value| %>
-        <%= content_tag(:div, value, class: "#{key}") %><br>
+      <%= content_tag(:div, value, class: "#{key}") %><br>
     <% end %>
     <%= yield %>
     <footer>

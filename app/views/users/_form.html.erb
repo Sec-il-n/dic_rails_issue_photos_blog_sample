@@ -19,13 +19,13 @@
           </div>
         <% end %>
         <div class="form">
-          <%= f.label :name %>
+          <p class="label"><%= f.label :name %></p>
           <%= f.text_field :name %>
-          <%= f.label :email %>
+          <p class="label"><%= f.label :email %></p>
           <%= f.email_field :email %>
-          <%= f.label :password %>
+          <p class="label"><%= f.label :password %></p>
           <%= f.password_field :password %>
-          <%= f.label :password_confirmation %>
+          <p class="label"><%= f.label :password_confirmation %></p>
           <%= f.password_field :password_confirmation %><br>
         </div>
         <%= f.submit "Create my account" %>

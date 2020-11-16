@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>投稿画面</title>
     <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
-    <link rel="stylesheet" href="/assets/stylesheets/_form.css">
+    <link rel="stylesheet" href="/assets/stylesheets/_form.scss">
   </head>
   <body>
     <%= form_with(model: blog, local: true, url: choose_new_or_edit) do |form| %>
@@ -19,15 +19,16 @@
         </div>
       <% end %>
       <div class="field">
-        <%= form.label :title %>
+        <p class="label"><%= form.label :title %></p>
+        <%# <%= form.label :title, class:'label' %> %>
         <%= form.text_field :title %>
       </div>
       <div class="field">
-        <%= form.label :content %>
+        <%= form.label :content, class:'label' %>
         <%= form.text_area :content %>
       </div>
       <div class="field">
-        <%= form.label :image %>
+        <%= form.label :image, class:'label' %>
         <%= form.file_field :image %>
         <%= form.hidden_field :image_cache %>
       </div>
