@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>投稿確認画面</title>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
-    <link rel="stylesheet" href="/assets/stylesheets/blogs.scss">
-  </head>
-  <body>
-    <h3>この内容で登録しますか？</h3>
-    <%= form_with(model: @blog, local: true, url: blogs_path) do |form| %>
-      <%= form.hidden_field :title %>
-      <%= form.hidden_field :content %>
-      <%= form.hidden_field :image %>
-      <%= form.hidden_field :image_cache %>
-      <div class="field">
-        <strong>タイトル:</strong>
-        <%= @blog.title %><br>
-      </div>
-      <div class="field">
-        <strong>内容:</strong>
-        <%= @blog.content %>
-      </div>
-      <div class="field">
-        <strong>写真: </strong>
-          <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
-      </div>
-      <div class="actions">
-        <%= form.submit %>
-        <%= form.submit '戻る', name: 'back' %>
-      </div>
-    <% end %>
-  </body>
-</html>
+<h3>この内容で登録しますか？</h3>
+<%= form_with(model: @blog, local: true, url: blogs_path) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cache %>
+  <div class="field">
+    <strong>タイトル:</strong>
+    <%= @blog.title %><br>
+  </div>
+  <div class="field">
+    <strong>内容:</strong>
+    <%= @blog.content %>
+  </div>
+  <div class="field">
+    <strong>写真: </strong>
+      <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+    <%= form.submit '戻る', name: 'back' %>
+  </div>
+<% end %>

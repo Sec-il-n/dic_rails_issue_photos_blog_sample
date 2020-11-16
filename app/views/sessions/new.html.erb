@@ -1,22 +1,10 @@
-<!-- <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>一覧画面</title>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
-    <link rel="stylesheet" href="/assets/stylesheets/sessions.scss">
-    <title>ログイン画面</title>
-  </head> -->
-  <body>
-    <h1>Log in</h1>
-    <div class="login_form">
-      <%= form_with(scope: :session,url: sessions_path, local: true) do |f| %>
-        <p><%= f.label :email %></p>
-        <%= f.email_field :email %>
-        <p><%= f.label :password %></p>
-        <%= f.password_field :password %><br>
-        <%= f.submit 'Log in' %>
-      <% end %>
-    </div>
-  </body>
-</html>
+<h1>Log in</h1>
+<div class="login_form">
+  <%= form_with(scope: :session,url: sessions_path, local: true) do |f| %>
+    <p><%= f.label :email %></p>
+    <%= f.email_field :email %>
+    <p><%= f.label :password %></p>
+    <%= f.password_field :password %><br>
+    <%= f.submit 'Log in' %>
+  <% end %>
+</div>

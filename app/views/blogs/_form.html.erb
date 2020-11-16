@@ -1,44 +1,33 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>投稿画面</title>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
-    <link rel="stylesheet" href="/assets/stylesheets/_form.scss">
-  </head>
-  <body>
-    <%= form_with(model: blog, local: true, url: choose_new_or_edit) do |form| %>
-      <% if blog.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= blog.errors.count %>　件のエラーが発生しました。</h2>
-          <ul>
-          <% blog.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+<%= form_with(model: blog, local: true, url: choose_new_or_edit) do |form| %>
+  <% if blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= blog.errors.count %>　件のエラーが発生しました。</h2>
+      <ul>
+      <% blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-      <div class="field">
-        <p class="label"><%= form.label :title %></p>
-        <%# <%= form.label :title, class:'label' %> %>
-        <%= form.text_field :title %>
-      </div>
-      <div class="field">
-        <%= form.label :content, class:'label' %>
-        <%= form.text_area :content %>
-      </div>
-      <div class="field">
-        <%= form.label :image, class:'label' %>
-        <%= form.file_field :image %>
-        <%= form.hidden_field :image_cache %>
-      </div>
-      <div class="field">
-        <strong>image: </strong>
-          <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
-      </div>
-      <div class="actions">
-        <%= form.submit %>
-      </div>
-    <% end %>
-  </body>
-</html>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <p class="label"><%= form.label :title %></p>
+    <%# <%= form.label :title, class:'label' %> %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label :content, class:'label' %>
+    <%= form.text_area :content %>
+  </div>
+  <div class="field">
+    <%= form.label :image, class:'label' %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <strong>image: </strong>
+      <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -2,10 +2,12 @@ table {
   margin-left: 25%;
 }
 .content_blogs strong {
+  // color: white;
   font-size: 1.2rem;
 }
 .content_blogs {
-  margin: 14%;
+  color: white;
+  margin: 10%;
   font-size: 1rem
 }
 .field {
@@ -13,6 +15,10 @@ table {
 }
 .actions {
   padding: 7px;
+}
+.links {
+  color: white;
+  font-size: 1rem;
 }
 th {
   font-size: 0.8rem;

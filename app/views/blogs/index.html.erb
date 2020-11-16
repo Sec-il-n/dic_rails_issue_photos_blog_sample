@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>一覧画面</title>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
-    <link rel="stylesheet" href="/assets/stylesheets/blogs.scss">
-  </head>
-  <body>
-    <h1>Blogs</h1>
-    <table>
-        <thead>
-          <tr>
-            <th>タイトル</th>
-            <th>内容</th>
-            <th>投稿者</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @blogs.each do |blog| %>
-            <tr>
-              <td><%= blog.title %></td>
-              <td><%= blog.content %></td>
-              <td><%= blog.user.name %></td>
-              <td><%= link_to '詳細', blog %></td>
-              <td><%= link_to '編集', edit_blog_path(blog) %></td>
-              <td><%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-    </table><br>
-    <%= link_to '投稿する', new_blog_path %>
-  </body>
-</html>
+<h1>Blogs</h1>
+<table>
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>投稿者</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.title %></td>
+          <td><%= blog.content %></td>
+          <td><%= blog.user.name %></td>
+          <td><%= link_to '詳細', blog %></td>
+          <td><%= link_to '編集', edit_blog_path(blog) %></td>
+          <td><%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table><br>
+<%= link_to '投稿する', new_blog_path %>

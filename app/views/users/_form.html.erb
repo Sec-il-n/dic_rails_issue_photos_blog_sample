@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>登録画面</title>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
-    <link rel="stylesheet" href="/assets/stylesheets/_form.scss">
-  </head>
-  <body>
-      <%= form_with(model: user, local: true) do |f| %>
-        <% if user.errors.any? %>
-          <div  id="error_explanation">
-            <h2><%= user.errors.count %>　件のエラーが発生しました。 </h2>
-            <ul>
-              <% user.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li><br>
-              <% end %>
-            </ul>
-          </div>
+<%= form_with(model: user, local: true) do |f| %>
+  <% if user.errors.any? %>
+    <div  id="error_explanation">
+      <h2><%= user.errors.count %>　件のエラーが発生しました。 </h2>
+      <ul>
+        <% user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li><br>
         <% end %>
-        <div class="form">
-          <p class="label"><%= f.label :name %></p>
-          <%= f.text_field :name %>
-          <p class="label"><%= f.label :email %></p>
-          <%= f.email_field :email %>
-          <p class="label"><%= f.label :password %></p>
-          <%= f.password_field :password %>
-          <p class="label"><%= f.label :password_confirmation %></p>
-          <%= f.password_field :password_confirmation %><br>
-        </div>
-        <%= f.submit "Create my account" %>
-      <% end %>
-  </body>
-</html>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form">
+    <p class="label"><%= f.label :name %></p>
+    <%= f.text_field :name %>
+    <p class="label"><%= f.label :email %></p>
+    <%= f.email_field :email %>
+    <p class="label"><%= f.label :password %></p>
+    <%= f.password_field :password %>
+    <p class="label"><%= f.label :password_confirmation %></p>
+    <%= f.password_field :password_confirmation %><br>
+  </div>
+  <%= f.submit "Create my account" %>
+<% end %>
