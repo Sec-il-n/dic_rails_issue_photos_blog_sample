@@ -19,8 +19,8 @@
     <p>title: </p><%= @blog.title %><br>
     <p>content: </p><%= @blog.content %><br>
     <p><strong>image: </strong>
-    <%= image_tag @blog.image.url %></p><br>
-  <%# <%= image_tag @blog.image.url if      ? %> %>
+      <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+    </p><br>
     <%= form.submit %>
     <%= form.submit 'back', name: 'back' %>
   </div>

@@ -1,3 +1,16 @@
-// Place all the styles related to the Blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  margin-left: 25%;
+}
+.content_blogs strong {
+  font-size: 1.2rem;
+}
+.content_blogs {
+  margin: 14%;
+  font-size: 1rem
+}
+.field {
+  padding: 7px;
+}
+.actions {
+  padding: 7px;
+}

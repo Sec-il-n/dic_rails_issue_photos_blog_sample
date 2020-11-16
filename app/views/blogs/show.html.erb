@@ -1,21 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%# <%= @blog.image %> %>
-  <%= image_tag @blog.image.url %>
-  <%# <%= image_tag @blog.image_url %> %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>詳細画面</title>
+    <link rel="stylesheet" href="/assets/stylesheets/normalize.scss">
+    <link rel="stylesheet" href="/assets/stylesheets/blogs.scss">
+  </head>
+  <body>
+    <p id="notice"><%= notice %></p>
+    <div class="content_blogs">
+      <strong>タイトル:</strong>
+      <%= @blog.title %>
+    </div>
+    <div class="content_blogs">
+      <strong>内容:</strong>
+      <%= @blog.content %>
+    </div>
+    <div class="content_blogs">
+      <strong>写真:</strong>
+        <%= image_tag @blog.image.url if @blog.image && @blog.image.url %>
+    </div>
+    <%= link_to '編集', edit_blog_path(@blog) %> |
+    <%= link_to '戻る', blogs_path %>
+  </body>
+</html>

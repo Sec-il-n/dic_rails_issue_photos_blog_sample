@@ -14,20 +14,21 @@
         <%= link_to 'PhotoBlogsSample', root_path, class:'left' %>
         <nav>
           <ul class="clearfix">
-            <!-- 変更点<li>を追加　css注意 -->
             <% if logged_in? %>
-              <%= link_to 'Log out', session_path(current_user.id), method: :delete, class:'right' %>
+              <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, class:'right' %>
+              <%= link_to '投稿', new_blog_path, class:'right' %>
+              <%= link_to '一覧', blogs_path, class:'right' %>
             <% else %>
-              <%= link_to 'Log in', new_session_path, class:'right' %>
-              <%= link_to 'Sign up', new_user_path, class:'right' %>
+              <%= link_to 'ログイン', new_session_path, class:'right' %>
+              <%= link_to '新規登録', new_user_path, class:'right' %>
             <% end %>
           </ul>
         </nav>
       </ul>
     </header>
-    <% flash.each do |key,value| %>
-        <%= content_tag(:div, value, class: "#{key}") %><br>
-    <% end %>
+      <% flash.each do |key,value| %>
+          <%= content_tag(:div, value, class: "#{key}") %><br>
+      <% end %>
     <%= yield %>
     <footer>
      <p>© 2015-2016 PhotoBlogsSample Corp.</p>
