@@ -29,7 +29,9 @@
     <% flash.each do |key,value| %>
       <%= content_tag(:div, value, class: "#{key}") %><br>
     <% end %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <footer>
      <p>© 2015-2016 PhotoBlogsSample Corp.</p>
     </footer>

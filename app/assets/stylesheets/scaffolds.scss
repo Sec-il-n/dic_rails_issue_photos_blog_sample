@@ -1,9 +1,7 @@
 body {
   background-image: url("/assets/picture-1.jpeg");
   background-attachment: fixed;
-  // background-attachment: scroll;
   text-align: center;
-  // background-color: #fff;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -22,15 +20,11 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-// ヘッダーの文字も
 a {
-  // color: #000;
   color: #fff;
   &:hover {
     color: #FFFFEE;
     background-color: #777777;
-    // color: #fff;
-    // background-color: #000;
   }
 }
 
@@ -52,17 +46,14 @@ div {
   color: green;
   margin-top: 20px;
   margin-bottom: 20px;
-  // margin: auto;
   font-size: 15px;
   background-color:rgba(255,255,255,0.5);
   background-blend-mode:lighten;
 }
-
 .danger {
   color: red;
   margin-top: 20px;
   margin-bottom: 20px;
-  // margin: auto;
   font-size: 15px;
   background-color:rgba(255,255,255,0.5);
   background-blend-mode:lighten;
@@ -77,14 +68,14 @@ div {
 #error_explanation {
   width: 450px;
   border: 2px solid red;
-  padding: 7px 7px 0;
+  padding: 7px 5px 0;
   margin: 0 auto;
   background-color: #f0f0f0;
 
   h2 {
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    padding: 4px 4px 4px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
     background-color: #c00;
@@ -92,19 +83,15 @@ div {
   }
 
   ul li {
-    font-size: 12px;
-    list-style: square;
+    font-size: 11px;
+    line-height: 3px;
     list-style: none;
+    font-weight: bold;
+    padding-top:7px;
   }
 }
 
 label {
   display: block;
+  padding-top: 3px;
 }
-//
-// .field {
-//   color: #fff;
-//   font-size: 1rem;
-//   margin-right: auto;
-//   text-align: center;
-// }
