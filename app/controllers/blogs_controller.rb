@@ -3,17 +3,15 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
   end
-
   def show
-  end
 
+  end
   def new
     @blog = Blog.new
   end
-
   def edit
-  end
 
+  end
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
@@ -31,7 +29,6 @@ class BlogsController < ApplicationController
       end
     end
   end
-
   def update
       unless @blog.update(blog_params) then
         redirect_to blogs_path, notice: '編集が失敗しました。'
@@ -44,7 +41,6 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
   end
-
   def destroy
     @blog.destroy
     respond_to do |format|
@@ -52,7 +48,6 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
   def set_blog
     @blog = Blog.find(params[:id])
