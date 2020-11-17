@@ -18,9 +18,6 @@ class BlogsController < ApplicationController
     if params[:back]
       render :new
     else
-    if params[:back]
-      render :new
-    else
       if @blog.save
         redirect_to blogs_path, notice: 'ブログを作成しました'
       else
