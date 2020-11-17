@@ -37,12 +37,11 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
   end
-  end
   def destroy
-    @blog.destroy
-    respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'ブログを削除しました。' }
-      format.json { head :no_content }
+    unless @blog.destroy then
+      redirect_to blogs_path, notice: '削除に失敗しました。'
+    else
+      redirect_to blogs_path, notice: 'ブログを削除しました。'
     end
   end
   private

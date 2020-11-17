@@ -12,10 +12,15 @@ table {
 .field {
   padding: 7px;
 }
+.field strong{
+  color: white;
+  font-size: 0.8rem;
+}
 .actions {
   padding: 7px;
 }
-.links {
+.links
+  font-weight: bold;
   color: white;
   font-size: 1rem;
 }
